@@ -4,5 +4,15 @@
 {% block content %}
 
 <h1>Projects template</h1>
+<h3>Hello, you are on the {{ page }}</h3>
+
+
+{% if number > 10 %}
+    <p>Number is greater than 10</p>
+{% elif number == 10 %}
+    <p>Number is equal to 10</p>
+{% else %}
+    <p>Number is less than 10</p>
+{% endif %}
     
 {% endblock content %}
