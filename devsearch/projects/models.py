@@ -14,3 +14,6 @@ class Project(models.Model):
         primary_key=True,
         editable=False
     )
+
+    def __str__(self):
+        return self.title
