@@ -21,3 +21,9 @@ def project(request, pk):
     }
 
     return render(request, 'projects/single-project.html', context)
+
+def create_project(request):
+    context = {
+
+    }
+    return render(request, 'projects/project_form.html', context)
