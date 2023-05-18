@@ -2,14 +2,13 @@ from django.contrib import admin
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from .models import Project
 
 def projects(request):
-    page = 'projects page'
-    number = 100
+    projects = Project.objects.all()
 
     context = {
-        'page': page,
-        'number': number,
+        'projects': projects,
     }
 
     return render(request, 'projects/projects.html', context)
