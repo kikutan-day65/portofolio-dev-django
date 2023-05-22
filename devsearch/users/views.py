@@ -10,3 +10,12 @@ def profiles(request):
     }
 
     return render(request, 'users/profiles.html', context)
+
+
+def user_profile(request, pk):
+
+    context = {
+        
+    }
+
+    return render(request, 'users/user_profile.html', context)
