@@ -78,24 +78,25 @@
                     <h3 class="devInfo__title">Skills</h3>
                     <div class="devInfo__skills">
 
+                        {% for skill in top_skills %}    
                         <div class="devSkill">
-                            <h4 class="devSkill__title">JavaScript</h4>
+                            <h4 class="devSkill__title">{{ skill.name }}</h4>
                             <p class="devSkill__info">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae neque voluptatum ut?
-                                Quaerat, ea
-                                cumque! Dolorum provident esse molestias commodi odit sapiente quod quasi corrupti
-                                obcaecati? Nobis
-                                ex temporibus quaerat!
+                                {{ skill.description }}
                             </p>
                         </div>
-                        
+                        {% endfor %}
 
                         <h3 class="devInfo__subtitle">Other Skills</h3>
                         <div class="devInfo__otherSkills">
 
+                            
+                            {% for skill in other_skills %}    
                             <span class="tag tag--pill tag--sub tag--lg">
-                                <small>Figma</small>
+                                <small>{{ skill.name }}</small>
                             </span>
+                            {% endfor %}
+
 
                         </div>
                     </div>
