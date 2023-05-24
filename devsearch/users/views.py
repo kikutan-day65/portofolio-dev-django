@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 
 from .models import Profile
 
 
-def login_page(request):
+def login_user(request):
 
     if request.method == 'POST':
         username = request.POST['username']
@@ -25,6 +25,11 @@ def login_page(request):
             print('Username OR password is in correct')
 
     return render(request, 'users/login_register.html')
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
 
 
 def profiles(request):
