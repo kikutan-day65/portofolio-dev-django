@@ -8,6 +8,11 @@ from .models import Profile
 
 
 def login_user(request):
+    page = 'login'
+
+    context = {
+        'page': page,
+    }
 
     if request.user.is_authenticated:
         return redirect('profiles')
@@ -29,13 +34,23 @@ def login_user(request):
         else:
             messages.error(request, 'Username OR password is in correct')
 
-    return render(request, 'users/login_register.html')
+    return render(request, 'users/login_register.html', context)
 
 
 def logout_user(request):
     logout(request)
     messages.error(request, 'Username was logged out!')
     return redirect('login')
+
+
+def register_user(request):
+    page = 'register'
+
+    context = {
+        'page': page,
+    }
+
+    return render(request, 'users/login_register.html', context)
 
 
 def profiles(request):
