@@ -40,7 +40,7 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    messages.error(request, 'Username was logged out!')
+    messages.info(request, 'Username was logged out!')
     return redirect('login')
 
 
