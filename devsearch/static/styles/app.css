@@ -845,3 +845,8 @@ img {
   margin-bottom: 1rem;
   margin-top: 2rem;
 }
+
+.alert {
+  display: block;
+  text-align: center;
+}
