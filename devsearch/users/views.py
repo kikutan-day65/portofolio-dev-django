@@ -95,3 +95,10 @@ def user_profile(request, pk):
     }
 
     return render(request, 'users/user_profile.html', context)
+
+
+def user_account(request):
+
+    context = {}
+
+    return render(request, 'users/account.html', context)
