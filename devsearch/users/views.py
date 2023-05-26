@@ -96,6 +96,7 @@ def user_profile(request, pk):
 
     return render(request, 'users/user_profile.html', context)
 
+
 @login_required(login_url='login')
 def user_account(request):
     profile = request.user.profile
