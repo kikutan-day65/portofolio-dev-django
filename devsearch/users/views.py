@@ -62,7 +62,7 @@ def register_user(request):
             return redirect('edit-account') 
         
         else:
-            messages.error(request, 'An error has occured during registration')
+            messages.error(request, 'An error has occurred during registration')
 
     context = {
         'page': page,
@@ -130,3 +130,13 @@ def edit_account(request):
     }
 
     return render(request, 'users/profile_form.html', context)
+
+
+@login_required(login_url="login")
+def create_skill(request):
+    
+    context = {
+        
+    }
+
+    return render(request, 'users/skill_form.html', context)
