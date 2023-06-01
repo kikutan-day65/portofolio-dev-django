@@ -63,7 +63,11 @@
                             {% endif %}
 
                         </ul>
-                        <a href="#" class="btn btn--sub btn--lg">Send Message </a>
+
+                        
+                        {% if request.user.profile.id != profile.id %}
+                            <a href="{% url 'create-message' profile.id %}" class="btn btn--sub btn--lg">Send Message </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -115,7 +119,7 @@
                                         <h3 class="project__title">{{ project.title }}</h3>
                                         <p><a class="project__author" href="{% url 'user-profile' project.owner.id %}">By {{ project.owner.name }}</a></p>
                                         <p class="project--rating">
-                                            <span style="font-weight: bold;">{{ project.vote_ratio }}%</span> Postitive
+                                            <span style="font-weight: bold;">{{ project.vote_ratio }}%</span> Positive
                                             Feedback ({{ project.vote_total }} Vote{{ project.vote_total | pluralize:"s" }})
                                         </p>
                                         <div class="project__tags">
