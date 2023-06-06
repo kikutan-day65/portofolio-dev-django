@@ -26,3 +26,11 @@ def get_projects(request):
     serializer = ProjectSerializer(projects, many=True)
 
     return Response(serializer.data)
+
+
+@api_view(['GET'])
+def get_project(request, pk):
+    project = Project.objects.get(id=pk)
+    serializer = ProjectSerializer(project, many=False)
+
+    return Response(serializer.data)
