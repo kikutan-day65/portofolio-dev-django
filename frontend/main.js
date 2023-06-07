@@ -1,3 +1,19 @@
+let login_btn = document.getElementById('login-btn')
+let logout_btn = document.getElementById('logout-btn')
+
+let token = localStorage.getItem('token')
+
+if (token) {
+    login_btn.remove()
+} else {
+    logout_btn.remove()
+}
+
+logout_btn.addEventListener('click', (e) => {
+    e.preventDefault()
+    localStorage.removeItem('token')
+    window.location = 'file:///C:/Users/bayst/coding/dev-portfolio/portofolio-dev-django/frontend/login.html'
+})
 
 
 let project_url = 'http://127.0.0.1:8000/api/projects/'
