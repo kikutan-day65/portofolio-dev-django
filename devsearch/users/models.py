@@ -38,6 +38,9 @@ class Profile(models.Model):
             url = ''
             
         return url
+    
+    class Meta:
+        ordering = ['-created']
 
     def __str__(self):
         return str(self.user.username)
