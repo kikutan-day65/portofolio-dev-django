@@ -30,6 +30,15 @@ class Profile(models.Model):
         editable=False
     )
 
+    @property
+    def image_url(self):
+        try:
+            url = self.profile_image.url
+        except:
+            url = ''
+            
+        return url
+
     def __str__(self):
         return str(self.user.username)
     
