@@ -94,6 +94,7 @@ def update_project(request, pk):
 
     context = {
         'form': form,
+        'project': project,
     }
 
     return render(request, 'projects/project_form.html', context)
